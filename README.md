@@ -632,3 +632,28 @@ Completed:
 - Version control
 
 The repository is now transitioning from implementation to long-term maintenance and incremental improvement.
+
+## License
+
+This project is released under the MIT License.
+
+See the repository root:
+
+```
+LICENSE
+```
+
+for the complete license text.
+
+The MIT License applies only to original work contained in this repository.
+
+Third-party software, data, and external resources remain subject to their own licenses and terms of use, including:
+
+- PyEO
+- Copernicus Sentinel-2 data
+- GeoBoundaries
+- GDAL
+- Rasterio
+- GeoPandas
+
+Users are responsible for reviewing and complying with the applicable third-party licenses and data-use conditions.
