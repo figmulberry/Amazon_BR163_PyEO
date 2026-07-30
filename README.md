@@ -185,6 +185,13 @@ The workflow was developed and validated on Windows using a Conda-managed Python
 >
 > The Configuration Guide walks new users through installing the required software, configuring local paths, setting up credentials, validating the environment, and preparing the repository for execution.
 
+> **Local Path Customization Guide**
+>
+> After reviewing the Configuration Guide, continue with the
+> [Path Customization Guide](11_documentation/Path_Customization_Guide.md).
+>
+> This guide explains which configuration values should be customised for your local installation and which values should remain unchanged to preserve the validated workflow.
+
 ### Software
 
 Install the following software before attempting to run the project:
