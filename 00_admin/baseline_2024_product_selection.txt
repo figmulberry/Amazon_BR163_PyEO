@@ -1,0 +1,73 @@
+Amazon BR163 baseline composite product selection
+
+Baseline window:
+2024-07-01 to 2024-09-30
+
+Cloud threshold:
+25 percent
+
+Intersecting Sentinel-2 tiles:
+21MXM
+21MYM
+
+Selection design:
+Three temporally spaced acquisition dates were selected across the baseline window. Both intersecting tiles were retained for every selected date to preserve complete pilot coverage.
+
+Selected products:
+
+1.
+Date: 2024-07-04
+Tile: 21MYM
+Cloud cover: 0.000471 percent
+Product name: S2B_MSIL2A_20240704T135709_N0510_R067_T21MYM_20240704T161809.SAFE
+UUID: ffe5ad75-a508-4433-b8dd-6461737e0490
+CSV zero-based row: 2
+Reason selected: Early-window acquisition, online Level-2A product, extremely low cloud cover, paired with tile 21MXM for complete spatial coverage.
+
+2.
+Date: 2024-07-04
+Tile: 21MXM
+Cloud cover: 0.010745 percent
+Product name: S2B_MSIL2A_20240704T135709_N0510_R067_T21MXM_20240704T161809.SAFE
+UUID: f2648e20-cb91-421c-9f16-e8b364b1ea7d
+CSV zero-based row: 9
+Reason selected: Early-window acquisition, online Level-2A product, very low cloud cover, paired with tile 21MYM for complete spatial coverage.
+
+3.
+Date: 2024-08-08
+Tile: 21MYM
+Cloud cover: 0.000584 percent
+Product name: S2A_MSIL2A_20240808T140051_N0511_R067_T21MYM_20240808T205355.SAFE
+UUID: d5490fab-fb61-4a1a-8224-74a2911823bb
+CSV zero-based row: 3
+Reason selected: Mid-window acquisition, online Level-2A product, extremely low cloud cover, paired with tile 21MXM.
+
+4.
+Date: 2024-08-08
+Tile: 21MXM
+Cloud cover: 0.076006 percent
+Product name: S2A_MSIL2A_20240808T140051_N0511_R067_T21MXM_20240808T205355.SAFE
+UUID: 11b4643b-819e-4d7e-814c-acf0def68440
+CSV zero-based row: 11
+Reason selected: Mid-window acquisition, online Level-2A product, low cloud cover, paired with tile 21MYM.
+
+5.
+Date: 2024-09-12
+Tile: 21MYM
+Cloud cover: 0.515834 percent
+Product name: S2B_MSIL2A_20240912T140049_N0511_R067_T21MYM_20240912T210329.SAFE
+UUID: f32769ec-06ca-431d-ba42-6444a78cb578
+CSV zero-based row: 16
+Reason selected: Late-window acquisition, online Level-2A product, low cloud cover, paired with tile 21MXM.
+
+6.
+Date: 2024-09-12
+Tile: 21MXM
+Cloud cover: 3.018597 percent
+Product name: S2B_MSIL2A_20240912T140049_N0511_R067_T21MXM_20240912T210329.SAFE
+UUID: 102a7a41-0134-437d-85be-6432547143b5
+CSV zero-based row: 24
+Reason selected: Late-window acquisition, online Level-2A product, acceptable cloud cover below the 25 percent threshold, paired with tile 21MYM.
+
+Selection rule:
+Only online Sentinel-2 Level-2A products were considered. Products were selected using date, tile coverage, cloud cover, temporal spacing, and relevance to the pilot ROI. Both intersecting tiles were retained for each selected acquisition date.

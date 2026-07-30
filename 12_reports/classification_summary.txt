@@ -1,0 +1,71 @@
+AMAZON BR163 FOREST/CLEARING CLASSIFICATION SUMMARY
+==============================================================
+
+Generated UTC: 2026-07-27T21:11:30.798168+00:00
+
+INPUTS AND MODEL
+------------------------------
+Input composite: C:\GIS\data\Amazon_BR163_PyEO\tile_data\21MYM\composite\composite_T21MYM_20240912T140049.tif
+Training GeoPackage: C:\GIS\projects\Amazon_BR163_PyEO\04_training\amazon_training.gpkg
+Trained model: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees.pkl
+Input band order: B02 Blue, B03 Green, B04 Red, B08 Near Infrared
+Class 1: Forest
+Class 2: Clearing
+
+VALIDATION EVIDENCE
+------------------------------
+Overall accuracy: recorded in model metadata
+Balanced overall accuracy: see balanced validation output files
+Class metrics file: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_class_metrics.csv
+Confusion matrix file: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_confusion_matrix.csv
+
+CLASSIFIED RASTER
+------------------------------
+Output raster: C:\GIS\projects\Amazon_BR163_PyEO\06_outputs\composite_T21MYM_20240912T140049_full_class.tif
+Dimensions: 10980 columns x 10980 rows
+Band count: 1
+Data type: Byte
+CRS: EPSG:32721
+Pixel size: 10.0 x 10.0 metres
+NoData value: 0
+Compression: LZW
+
+CLASS DISTRIBUTION
+------------------------------
+Forest: 101,374,889 pixels; 84.09483% of valid pixels; 1,013,748.89 ha; 10,137.49 km2
+Clearing: 19,173,412 pixels; 15.90517% of valid pixels; 191,734.12 ha; 1,917.34 km2
+NoData: 12,099 pixels; 120.99 ha; 1.21 km2
+
+STRUCTURAL QA
+------------------------------
+Raster opened successfully: PASS
+Raster dimensions match the input composite: PASS
+Raster geotransform matches the input composite: PASS
+Raster CRS matches the input composite: PASS
+Raster CRS is EPSG:32721: PASS
+Raster pixel size is 10 x 10 metres: PASS
+Raster contains one Byte band: PASS
+Class value 0 is formally assigned as NoData: PASS
+Only class values 0, 1, and 2 are present: PASS
+
+LIMITATIONS AND INTERPRETATION
+------------------------------
+1. The model is a binary pilot classifier that distinguishes Forest and Clearing only.
+2. Training and validation polygons were created within the same pilot landscape, although validation polygons were spatially separate from training polygons.
+3. Validation support values count sampled pixels rather than fully independent observations. Pixels within the same polygon are spatially autocorrelated.
+4. The very high validation scores demonstrate strong spectral separation within the sampled pilot landscape. They do not establish equivalent performance throughout the wider Amazon.
+5. Model transferability may be reduced by differences in forest structure, disturbance type, seasonality, atmospheric conditions, illumination, soil exposure, mixed pixels, acquisition date, and preprocessing.
+6. The balanced-pixel sensitivity assessment reduces the influence of unequal class pixel counts, but does not remove within-polygon spatial autocorrelation.
+7. The resulting class-area statistics are model-derived outputs and must not be presented as independently verified official forest-area estimates.
+
+OUTPUT FILES
+------------------------------
+Model: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees.pkl
+Model metadata: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_metadata.json
+Class metrics: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_class_metrics.csv
+Confusion matrix CSV: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_confusion_matrix.csv
+Confusion matrix PNG: C:\GIS\projects\Amazon_BR163_PyEO\05_model\amazon_forest_clearing_extratrees_confusion_matrix.png
+Classified raster: C:\GIS\projects\Amazon_BR163_PyEO\06_outputs\composite_T21MYM_20240912T140049_full_class.tif
+Class-area statistics: C:\GIS\projects\Amazon_BR163_PyEO\12_reports\class_area_statistics.csv
+Classification summary: C:\GIS\projects\Amazon_BR163_PyEO\12_reports\classification_summary.txt
+Processing log: C:\GIS\projects\Amazon_BR163_PyEO\11_logs\amazon_model_training.log

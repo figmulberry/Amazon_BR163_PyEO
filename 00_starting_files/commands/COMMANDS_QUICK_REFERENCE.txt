@@ -1,0 +1,63 @@
+PYEO WINDOWS / AMAZON BR-163 — QUICK REFERENCE
+Use the full HTML workflow for context, gates, QA, and troubleshooting.
+
+GIT BASH — after creating your GitHub fork
+--------------------------------------------
+mkdir -p /c/GIS/src
+cd /c/GIS/src
+git clone <PASTE-YOUR-FORK-HTTPS-URL>
+cd pyeo
+git remote add upstream https://github.com/clcr/pyeo.git
+git remote -v
+git status
+git rev-parse HEAD
+git switch -c amazon-br163-windows-setup
+git push -u origin amazon-br163-windows-setup
+
+MINICONDA PROMPT — create and install
+-------------------------------------
+cd /d C:\GIS\src\pyeo
+dir environment_windows_w1.yml
+conda env create --file environment_windows_w1.yml --name pyeo_env
+conda activate pyeo_env
+where python
+python --version
+python -m pip install -e .
+python -m pip show pyeo
+python -m pip check
+
+MINICONDA PROMPT — verification
+-------------------------------
+python -c "import pyeo; print(pyeo.__file__)"
+python -c "import pyeo.classification; print('PASS')"
+python -c "from osgeo import gdal; print(gdal.VersionInfo('RELEASE_NAME'))"
+python -c "import pyeo.queries_and_downloads as q; print(q.DATASPACE_API_ROOT)"
+python C:\GIS\projects\Amazon_BR163_PyEO\00_starting_files\scripts\verify_pyeo_installation.py
+
+MINICONDA PROMPT — Jupyter
+--------------------------
+python -m ipykernel install --user --name pyeo_env --display-name "Python (PyEO)"
+cd /d C:\GIS
+jupyter lab
+
+MINICONDA PROMPT — reproducibility records
+------------------------------------------
+conda env export --from-history > C:\GIS\projects\Amazon_BR163_PyEO\00_admin\environment_history.yml
+conda list --explicit > C:\GIS\projects\Amazon_BR163_PyEO\00_admin\environment_explicit.txt
+conda list > C:\GIS\projects\Amazon_BR163_PyEO\00_admin\conda_list.txt
+
+MINICONDA PROMPT — current CDSE OData probe
+------------------------------------------
+python C:\GIS\projects\Amazon_BR163_PyEO\00_starting_files\scripts\cdse_odata_probe.py ^
+  --roi C:\GIS\projects\Amazon_BR163_PyEO\01_roi\pilot\amazon_br163_pilot.gpkg ^
+  --start 2025-07-01 --end 2025-09-30 --cloud 25 --top 10 ^
+  --output C:\GIS\projects\Amazon_BR163_PyEO\00_admin\cdse_probe.csv
+
+MINICONDA PROMPT — download one returned product
+------------------------------------------------
+python C:\GIS\projects\Amazon_BR163_PyEO\00_starting_files\scripts\cdse_download_one.py ^
+  --catalog C:\GIS\projects\Amazon_BR163_PyEO\00_admin\cdse_probe.csv ^
+  --credentials C:\GIS\secrets\pyeo_cdse.ini ^
+  --row 0 ^
+  --out-dir C:\GIS\data\Amazon_BR163_PyEO\test_download ^
+  --extract

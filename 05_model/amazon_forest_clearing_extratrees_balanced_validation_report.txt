@@ -1,0 +1,8 @@
+              precision    recall  f1-score   support
+
+      Forest   0.999858  0.999953  0.999905     21144
+    Clearing   0.999953  0.999858  0.999905     21144
+
+    accuracy                       0.999905     42288
+   macro avg   0.999905  0.999905  0.999905     42288
+weighted avg   0.999905  0.999905  0.999905     42288

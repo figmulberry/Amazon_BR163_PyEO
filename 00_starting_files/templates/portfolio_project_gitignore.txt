@@ -1,0 +1,54 @@
+# Rename this file to .gitignore in the portfolio repository root.
+
+# Credentials and local secrets
+secrets/
+**/credentials*.ini
+**/*secret*.ini
+.env
+.env.*
+
+# Python and Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Conda/local environment files
+.conda/
+venv/
+.venv/
+
+# Large downloaded and temporary Earth Observation data
+raw_data/
+downloads/
+tile_data/
+temp/
+tmp/
+**/*.SAFE/
+**/*.jp2
+**/*.zip
+**/*.tar
+**/*.tar.gz
+**/*.part
+
+# Large/generated raster and model artifacts
+**/*.tif
+**/*.tiff
+**/*.vrt
+**/*.img
+**/*.npy
+**/*.npz
+**/*.pkl
+**/*.joblib
+
+# Logs and local machine state
+*.log
+logs/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# QGIS temporary files
+*.qgz~
+*.qgs~
+*.qml~

@@ -1,0 +1,127 @@
+{
+  "project": "Amazon BR163 PyEO",
+  "model_name": "amazon_forest_clearing_extratrees",
+  "model_path": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees.pkl",
+  "training_raster": "C:\\GIS\\data\\Amazon_BR163_PyEO\\tile_data\\21MYM\\composite\\composite_T21MYM_20240912T140049.tif",
+  "training_geopackage": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\04_training\\amazon_training.gpkg",
+  "training_layer": "training_polygons",
+  "validation_layer": "validation_polygons",
+  "band_order": [
+    "B02_blue",
+    "B03_green",
+    "B04_red",
+    "B08_nir"
+  ],
+  "class_definitions": {
+    "1": "Forest",
+    "2": "Clearing"
+  },
+  "estimator": "sklearn.ensemble.ExtraTreesClassifier",
+  "estimator_settings": {
+    "bootstrap": false,
+    "criterion": "gini",
+    "max_features": 0.55,
+    "min_samples_leaf": 2,
+    "min_samples_split": 16,
+    "n_estimators": 100,
+    "n_jobs": -1,
+    "class_weight": "balanced",
+    "random_state": 101
+  },
+  "training_feature_rows": 343073,
+  "validation_feature_rows": 1544823,
+  "overall_accuracy": 0.99997928565279,
+  "class_metrics": {
+    "Forest": {
+      "precision": 0.9999980310477516,
+      "recall": 0.9999809671197148,
+      "f1-score": 0.999989499010938,
+      "support": 1523679.0
+    },
+    "Clearing": {
+      "precision": 0.9986301369863013,
+      "recall": 0.9998581157775256,
+      "f1-score": 0.9992437491137686,
+      "support": 21144.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1523650,
+      29
+    ],
+    [
+      3,
+      21141
+    ]
+  ],
+  "outputs": {
+    "model": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees.pkl",
+    "confusion_matrix_csv": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees_confusion_matrix.csv",
+    "confusion_matrix_png": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees_confusion_matrix.png",
+    "class_metrics_csv": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees_class_metrics.csv",
+    "classification_report_txt": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\05_model\\amazon_forest_clearing_extratrees_classification_report.txt",
+    "classified_raster": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\06_outputs\\composite_T21MYM_20240912T140049_full_class.tif",
+    "classification_summary": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\12_reports\\classification_summary.txt",
+    "class_area_statistics": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\12_reports\\class_area_statistics.csv",
+    "training_log": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\11_logs\\amazon_model_training.log"
+  },
+  "limitations": [
+    "The model is a binary pilot classifier that distinguishes Forest and Clearing only.",
+    "Training and validation polygons were created within the same pilot landscape, although validation polygons were spatially separate from training polygons.",
+    "Validation support values count sampled pixels rather than fully independent observations. Pixels within the same polygon are spatially autocorrelated.",
+    "The very high validation scores demonstrate strong spectral separation within the sampled pilot landscape. They do not establish equivalent performance throughout the wider Amazon.",
+    "Model transferability may be reduced by differences in forest structure, disturbance type, seasonality, atmospheric conditions, illumination, soil exposure, mixed pixels, acquisition date, and preprocessing.",
+    "The balanced-pixel sensitivity assessment reduces the influence of unequal class pixel counts, but does not remove within-polygon spatial autocorrelation.",
+    "The resulting class-area statistics are model-derived outputs and must not be presented as independently verified official forest-area estimates."
+  ],
+  "classification": {
+    "input_raster": "C:\\GIS\\data\\Amazon_BR163_PyEO\\tile_data\\21MYM\\composite\\composite_T21MYM_20240912T140049.tif",
+    "classified_raster": "C:\\GIS\\projects\\Amazon_BR163_PyEO\\06_outputs\\composite_T21MYM_20240912T140049_full_class.tif",
+    "width": 10980,
+    "height": 10980,
+    "band_count": 1,
+    "data_type": "Byte",
+    "epsg": "32721",
+    "pixel_size_metres": [
+      10.0,
+      10.0
+    ],
+    "nodata_value": 0,
+    "compression": "LZW",
+    "class_definitions": {
+      "0": "NoData",
+      "1": "Forest",
+      "2": "Clearing"
+    },
+    "class_distribution": [
+      {
+        "class_value": 0,
+        "class_name": "NoData",
+        "pixel_count": 12099,
+        "percent_valid_pixels": 0.0,
+        "area_m2": 1209900.0,
+        "area_hectares": 120.99,
+        "area_km2": 1.2099
+      },
+      {
+        "class_value": 1,
+        "class_name": "Forest",
+        "pixel_count": 101374889,
+        "percent_valid_pixels": 84.09483017101999,
+        "area_m2": 10137488900.0,
+        "area_hectares": 1013748.89,
+        "area_km2": 10137.4889
+      },
+      {
+        "class_value": 2,
+        "class_name": "Clearing",
+        "pixel_count": 19173412,
+        "percent_valid_pixels": 15.905169828980004,
+        "area_m2": 1917341200.0,
+        "area_hectares": 191734.12,
+        "area_km2": 1917.3412
+      }
+    ]
+  }
+}

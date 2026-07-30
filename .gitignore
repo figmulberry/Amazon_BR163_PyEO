@@ -1,0 +1,51 @@
+﻿# Jupyter and Python
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Logs and secrets
+*.log
+*.env
+*credentials*.ini
+*secrets*.ini
+
+# Generated processing outputs
+06_composites/*
+06_outputs/*
+07_classification/*
+08_change/*
+10_exports/*
+11_logs/*
+
+# Keep empty output folders
+!06_composites/.gitkeep
+!06_outputs/.gitkeep
+!07_classification/.gitkeep
+!08_change/.gitkeep
+!10_exports/.gitkeep
+!11_logs/.gitkeep
+
+# Large external reference datasets
+02_reference/sentinel2_tiles/S2A_OPER_GIP_TILPAR_*/
+02_reference/sentinel2_tiles/sentinel2_global_grid_official.*
+02_reference/administrative/geoBoundaries-BRA-ADM2.*
+
+# Large generated model tables and installation-test rasters
+05_model/*_training_features.csv
+05_model/*_validation_features.csv
+05_model/installation_test/*.tif
+05_model/installation_test/*.tif.*
+
+# QGIS temporary files
+*.qgz~
+*.qgs~
+*.aux.xml
+
+# Operating-system files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+00_admin/environment_explicit.txt
+00_admin/pip_freeze.txt
+09_qgis/*.qgz
