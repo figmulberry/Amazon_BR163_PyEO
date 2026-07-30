@@ -10,6 +10,29 @@ The repository records the development and validation of a Windows-adapted PyEO 
 
 No unreleased changes are currently documented.
 
+## [1.1.0] - 2026-07-30
+
+### Added
+
+- Configuration Guide for installing and configuring the project on another computer.
+- Local Path Customization Guide identifying machine-specific and validated configuration values.
+- Non-destructive configuration validator (`scripts/verify_configuration.py`).
+- Portable local configuration template (`amazon_br163_pyeo_local.template.ini`).
+- Local configuration generator (`scripts/create_local_configuration.py`).
+
+### Changed
+
+- Updated the README with configuration, path-customization, validation, and local-generation guidance.
+- Improved repository onboarding for installation on different Windows computers.
+- Separated the validated project configuration from generated local machine configuration.
+
+### Validation
+
+- Configuration validator successfully validates repository structure, configuration parsing, required files, required directories, and processing-stage safety.
+- Local configuration generator successfully creates a machine-specific configuration while preserving the validated Version 1.0 configuration.
+- Local configuration generation automatically invokes the configuration validator, and the generated configuration passes all validation checks.
+- Generated local configuration (`00_admin/amazon_br163_local.ini`) remains excluded from version control through `.gitignore`.
+
 ## [1.0] - 2026-07-30
 
 ### Added

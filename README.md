@@ -664,26 +664,37 @@ Future development is planned in incremental releases.
 
 Current release:
 
-**Version 1.0**
+**Version 1.1.0**
 
 Status:
 
-**Validated local implementation**
+**Stable portable configuration release**
 
-Completed:
+Version 1.1.0 preserves the validated Windows-adapted PyEO processing workflow while improving repository portability and onboarding.
 
-- Windows adaptation
-- CDSE integration
-- Operational notebooks
-- Model training
-- Change detection
-- Vectorisation
+### New in Version 1.1.0
+
+- Configuration Guide for setting up the project on another Windows computer.
+- Local Path Customization Guide describing which configuration values are machine-specific.
+- Non-destructive configuration validator (`scripts/verify_configuration.py`).
+- Portable local configuration template.
+- Local configuration generator (`scripts/create_local_configuration.py`).
+- Automatic validation after local configuration generation.
+- Git protection for generated local configuration files.
+
+### Processing Workflow
+
+The validated Version 1.0 processing workflow remains unchanged, including:
+
+- Sentinel-2 image acquisition
+- Baseline composite generation
+- Binary land-cover classification
+- Forest-to-clearing change detection
+- Polygon vectorisation
 - Administrative enrichment
-- Structured QA
-- Repository cleanup
-- Version control
+- Final quality-assurance workflow
 
-The repository is now transitioning from implementation to long-term maintenance and incremental improvement.
+Version 1.1.0 improves installation, portability, and repository usability without changing the validated analytical results.
 
 ## License
 
