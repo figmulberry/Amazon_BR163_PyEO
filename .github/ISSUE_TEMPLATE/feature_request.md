@@ -18,11 +18,9 @@ Describe the current limitation or operational need.
 
 Explain the proposed enhancement.
 
-## Benefits
+## Expected Benefits
 
-Describe the expected benefits of implementing this change.
-
-Examples include:
+Describe the expected benefits, for example:
 
 - Improved reproducibility
 - Improved workflow reliability
@@ -33,12 +31,12 @@ Examples include:
 
 ## Affected Components
 
-Identify the affected repository components.
+Identify the repository components that would be affected.
 
-Examples:
+Examples include:
 
-- Documentation
 - Configuration
+- Documentation
 - Model training
 - Composite generation
 - Classification
@@ -50,7 +48,7 @@ Examples:
 
 ## Validation
 
-Describe how the enhancement should be validated after implementation.
+Describe how the enhancement should be tested before it is considered complete.
 
 ## Additional Context
 
