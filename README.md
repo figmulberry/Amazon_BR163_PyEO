@@ -215,6 +215,21 @@ The validator performs non-destructive checks only. It does **not**:
 - modify outputs;
 - run the PyEO processing pipeline.
 
+### Local Configuration Generator
+
+Instead of manually editing the validated configuration, generate a local machine-specific configuration:
+
+```powershell
+python scripts/create_local_configuration.py
+```
+
+The generator:
+
+- creates `00_admin/amazon_br163_local.ini`;
+- preserves the validated Version 1.0 configuration;
+- automatically validates the generated configuration using `verify_configuration.py`;
+- never commits the generated local configuration to Git.
+
 ### Software
 
 Install the following software before attempting to run the project:

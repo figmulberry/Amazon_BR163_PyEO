@@ -49,3 +49,6 @@ Desktop.ini
 00_admin/environment_explicit.txt
 00_admin/pip_freeze.txt
 09_qgis/*.qgz
+
+# Local machine configuration
+00_admin/amazon_br163_local.ini
