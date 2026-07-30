@@ -192,6 +192,29 @@ The workflow was developed and validated on Windows using a Conda-managed Python
 >
 > This guide explains which configuration values should be customised for your local installation and which values should remain unchanged to preserve the validated workflow.
 
+### Configuration Validation
+
+Always validate the repository configuration before running any processing notebook.
+
+Run:
+
+```powershell
+python scripts/verify_configuration.py
+```
+
+A successful validation ends with:
+
+```text
+Configuration validation passed.
+```
+
+The validator performs non-destructive checks only. It does **not**:
+
+- download imagery;
+- execute notebooks;
+- modify outputs;
+- run the PyEO processing pipeline.
+
 ### Software
 
 Install the following software before attempting to run the project:
