@@ -178,6 +178,13 @@ All disabled stages are expected to skip cleanly without modifying existing outp
 
 The workflow was developed and validated on Windows using a Conda-managed Python environment.
 
+> **Configuration Guide**
+>
+> Before configuring the project on a new computer, review the
+> [Configuration Guide](11_documentation/Configuration_Guide.md).
+>
+> The Configuration Guide walks new users through installing the required software, configuring local paths, setting up credentials, validating the environment, and preparing the repository for execution.
+
 ### Software
 
 Install the following software before attempting to run the project:
