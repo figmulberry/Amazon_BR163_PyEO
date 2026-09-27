@@ -174,9 +174,6 @@ Only the processing stage intentionally enabled in the INI should execute.
 
 All disabled stages are expected to skip cleanly without modifying existing outputs.
 
-> [!NOTE]
-> Before starting a processing stage, confirm that the intended stage is enabled in the active INI and review the expected input and output locations. This helps avoid unintentionally replacing products from an earlier processing run.
-
 ## Installation and Environment
 
 The workflow was developed and validated on Windows using a Conda-managed Python environment.
