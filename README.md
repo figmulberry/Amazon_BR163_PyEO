@@ -484,6 +484,11 @@ Raster quality assurance includes:
 - filename consistency
 - cloud-mask verification
 
+For the validated BR-163 pilot outputs, raster QA should confirm the following spatial settings:
+
+- Coordinate reference system: EPSG:32721
+- Output resolution: 20 metres
+
 ---
 
 ### Classification Validation
